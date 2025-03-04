@@ -94,4 +94,17 @@ module.exports = (app, upload, fs) => {
             res.status(401).json({ error: 'Invalid credentials' });
           }
     });
+
+    app.get('/login?:id', (req, res) => {
+
+        var num = Math.floor(Math.random() * 90000) + 10000;
+
+        const requesterInformation = {
+            name: 'myTU Knowledge Base',
+            perm: ["NAME", "ID"],
+            code: '2020',
+        }
+
+        res.json(requesterInformation);
+    });
 }
